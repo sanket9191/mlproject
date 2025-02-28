@@ -1,1 +1,77 @@
-<h1>Welcome to the home page</h1>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #FAF1E4;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .title {
+            font-size: 2.5em;
+            color: #435334;
+            font-weight: bold;
+        }
+        .sub-title {
+            font-size: 1.5em;
+            color: #9eb384;
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .info {
+            text-align: left;
+            margin: 20px;
+            font-size: 1.1em;
+            color: #183d3d;
+        }
+        .button {
+            padding: 12px 24px;
+            font-size: 1.2em;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Academic Performance Predictor</div>
+        <div class="sub-title">Predict a student's mathematics score with other known features.</div>
+        <hr>
+        <div class="info">
+            <p><strong>Required Inputs:</strong></p>
+            <ul>
+                <li>Gender of Student</li>
+                <li>Race/Ethnicity</li>
+                <li>Parental Education Level</li>
+                <li>Reading & Writing Scores</li>
+            </ul>
+            <p><strong>Trained Models:</strong></p>
+            <ul>
+                <li>Random Forest</li>
+                <li>Gradient Boosting</li>
+                <li>Linear Regression</li>
+                <li>XGBoost</li>
+                <li>CatBoost</li>
+                <li>AdaBoost</li>
+            </ul>
+        </div>
+        <form action="{{ url_for('predict_datapoint') }}" method="GET">
+            <button class="button" type="submit">Go to Predictor</button>
+        </form>
+    </div>
+</body>
+</html>
